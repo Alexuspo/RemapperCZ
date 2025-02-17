@@ -1,43 +1,28 @@
-# ReMapper CZ
+# Vítejte v ReMapper!
 
-ReMapper je TypeScript knihovna pro vytváření map pro Beat Saber. Poskytuje výkonné nástroje pro manipulaci s objekty, vytváření efektů a správu složitých mapovacích projektů.
+Toto je TypeScript knihovna navržená pro vytváření Beat Saber modchartů. Modeluje schéma beatmapy pomocí obalových tříd a umožňuje jednodušší a typově bezpečný způsob skriptování.
 
-## Obsah
+![ReMapper Preview](images/remapper-preview.png)
 
-- [Začínáme](./docs/zacatky.md)
-- [Instalace](./docs/instalace.md)
-- [Základní koncepty](./docs/zakladni-koncepty.md)
-- [Pokročilé funkce](./docs/pokrocile-funkce.md)
-- [API Reference](./docs/api-reference.md)
+Implementuje funkce ze základní hry a také z Aeroluna's Heck suite:
+- Schéma základní hry
+- Heck schéma
 
-## Hlavní funkce
+## Proč ReMapper vznikl
 
-- Plná podpora TypeScriptu
-- Intuitivní API pro manipulaci s objekty
-- Pokročilé animační nástroje
-- Optimalizovaný výkon
-- Rozšířitelná architektura
+- Původně byl vytvořen pro zefektivnění technik vyvinutých během tvorby mapy "Somewhere Out There"
+- Vznikl z frustrace při hledání informací o tom, jak psát/manipulovat se syrovým JSON beatmap formátem
+- Snaha vyhnout se kopírování pomocných funkcí mezi projekty
 
-## Rychlý start
+I když byl původně vytvořen pro osobní použití, ReMapper (a kód z něj odvozený) byl použit v mnoha dalších projektech.
 
-```typescript
-import { map } from "remapper";
+## Začínáme
 
-map.setSettings({
-    bpm: 120,
-    noteJumpSpeed: 16
-});
-
-// Vytvoření základního objektu
-const kostka = new CustomEvent(0).push();
-```
+Pro více informací navštivte naši [Wiki](pages/wiki.html).
 
 ## Podpora
 
-Při problémech můžete:
-1. Otevřít issue na GitHubu
-2. Připojit se na [Discord server](https://discord.gg/rKduRNc)
+České zpracování dokumentace: alexpomykacz
 
-## Licence
-
-Tento projekt je licencován pod MIT licencí.
+[Originální ReMapper](https://github.com/Swifter1243/ReMapper)
+```
