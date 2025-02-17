@@ -25,12 +25,37 @@ function generateMenu(inRoot = false) {
     // ... implementace ...
 }
 
-// Přidat event listenery pro menu
-function initializeMenu() {
+function initMenu() {
     const hamburger = document.querySelector('.hamburger');
     const sidebar = document.querySelector('.sidebar');
     const overlay = document.querySelector('.overlay');
     const sectionToggles = document.querySelectorAll('.section-toggle');
 
-    // ... implementace event listenerů ...
+    hamburger.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        hamburger.classList.remove('active');
+    });
+
+    sectionToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const submenu = toggle.nextElementSibling;
+            toggle.classList.toggle('active');
+            
+            if (submenu.style.maxHeight) {
+                submenu.style.maxHeight = null;
+            } else {
+                submenu.style.maxHeight = submenu.scrollHeight + "px";
+            }
+        });
+    });
 }
+
+// Inicializace menu po načtení stránky
+document.addEventListener('DOMContentLoaded', initMenu);
