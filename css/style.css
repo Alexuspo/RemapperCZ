@@ -290,7 +290,7 @@ section {
     right: 0;
     top: 0;
     width: 300px;
-    height: 100vh;
+    height: 100%;
     background: #0d0d0d;
     padding: 1rem;
     transform: translateX(100%);
@@ -309,6 +309,8 @@ section {
     gap: 6px;
     cursor: pointer;
     padding: 10px;
+    background: none;
+    border: none;
 }
 
 .hamburger span {
@@ -329,6 +331,43 @@ section {
 
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.menu-section {
+    margin: 1rem 0;
+}
+
+.section-toggle {
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-toggle::after {
+    content: '+';
+    font-size: 1.2em;
+}
+
+.section-toggle.active::after {
+    content: '-';
+}
+
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding-left: 1rem;
+    margin: 0;
+    list-style: none;
 }
 
 .nav-menu {

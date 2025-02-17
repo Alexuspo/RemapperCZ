@@ -10,33 +10,32 @@
     <nav>
         <div class="nav-content">
             <h1>ReMapper CZ</h1>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <div class="overlay"></div>
     
-    <div class="sidebar">
+    <aside class="sidebar">
         <nav class="side-nav">
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <!-- Kopírovat zbytek menu z template.html, ale upravit cesty -->
-                <li>
-                    <h3>Setup</h3>
-                    <ul>
+                <li><a href="index.html">Domů</a></li>
+                <li class="menu-section">
+                    <button class="section-toggle">Setup</button>
+                    <ul class="submenu">
                         <li><a href="pages/instalace.html">Installing ReMapper</a></li>
                         <li><a href="pages/setting-maps.html">Setting Maps Up</a></li>
                         <li><a href="pages/workflow.html">Workflow</a></li>
                     </ul>
                 </li>
-                <!-- ...zbytek menu struktura... -->
+                <!-- Další sekce menu podobně -->
             </ul>
         </nav>
-    </div>
+    </aside>
 
     <main>
         <h1>Vítejte v ReMapper!</h1>
@@ -73,20 +72,39 @@
     </footer>
 
     <script>
+        // Menu toggle
         const hamburger = document.querySelector('.hamburger');
         const sidebar = document.querySelector('.sidebar');
         const overlay = document.querySelector('.overlay');
+        const sectionToggles = document.querySelectorAll('.section-toggle');
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
+        hamburger.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        function toggleMenu() {
             sidebar.classList.toggle('active');
             overlay.classList.toggle('active');
-        });
+            hamburger.classList.toggle('active');
+        }
 
-        overlay.addEventListener('click', () => {
-            hamburger.classList.remove('active');
+        function closeMenu() {
             sidebar.classList.remove('active');
             overlay.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+
+        // Rozbalovací sekce
+        sectionToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const submenu = toggle.nextElementSibling;
+                toggle.classList.toggle('active');
+                
+                if (submenu.style.maxHeight) {
+                    submenu.style.maxHeight = null;
+                } else {
+                    submenu.style.maxHeight = submenu.scrollHeight + "px";
+                }
+            });
         });
     </script>
 </body>
