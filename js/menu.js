@@ -26,21 +26,11 @@ function generateMenu(inRoot = false) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const menuHeaders = document.querySelectorAll('.menu-header');
     const hamburger = document.querySelector('.hamburger');
     const sidebar = document.querySelector('.sidebar');
     const overlay = document.querySelector('.overlay');
-    const sectionToggles = document.querySelectorAll('.section-toggle');
 
-    // Menu toggle
-    menuHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const parent = header.parentElement;
-            parent.classList.toggle('active');
-        });
-    });
-
-    // Hamburger menu
+    // Zjednodušené ovládání menu
     hamburger.addEventListener('click', () => {
         sidebar.classList.toggle('active');
         overlay.classList.toggle('active');
@@ -51,18 +41,5 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebar.classList.remove('active');
         overlay.classList.remove('active');
         hamburger.classList.remove('active');
-    });
-
-    sectionToggles.forEach(toggle => {
-        toggle.addEventListener('click', () => {
-            const submenu = toggle.nextElementSibling;
-            toggle.classList.toggle('active');
-            
-            if (submenu.style.maxHeight) {
-                submenu.style.maxHeight = null;
-            } else {
-                submenu.style.maxHeight = submenu.scrollHeight + "px";
-            }
-        });
     });
 });

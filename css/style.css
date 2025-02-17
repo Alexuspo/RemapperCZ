@@ -334,107 +334,48 @@ section {
 }
 
 .menu-section {
-    margin-bottom: 1rem;
+    display: none;
 }
 
 .section-toggle {
-    width: 100%;
-    text-align: left;
-    padding: 0.75rem 1rem;
-    background: rgba(41, 98, 255, 0.1);
-    border: none;
-    border-radius: 4px;
-    color: var(--primary-color);
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-}
-
-.section-toggle::after {
-    content: '+';
-    font-size: 1.2em;
-}
-
-.section-toggle.active::after {
-    content: '-';
+    display: none;
 }
 
 .submenu {
-    padding-left: 1rem;
-    margin: 0.5rem 0;
-    list-style: none;
-    border-left: 2px solid var(--primary-color);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-
-.submenu a {
-    padding: 0.5rem 1rem;
-    display: block;
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.submenu a:hover {
-    color: var(--primary-color);
-}
-
-.submenu-header {
-    color: #888;
-    font-size: 0.9em;
-    font-weight: bold;
-    padding: 0.5rem;
-    margin-top: 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.submenu-item {
-    padding-left: 1rem;
+    display: none;
 }
 
 .nav-menu {
     padding: 0;
     margin: 0;
     list-style: none;
-    max-width: 100%;
 }
 
-.nav-menu > li {
-    margin: 0.5rem 0;
-    width: 100%;
+.nav-menu ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    display: block;
+    list-style: none;
+    border-left: 2px solid rgba(255,255,255,0.1);
+    margin-left: 0.5rem;
+    padding-left: 1rem;
+}
+
+.nav-menu li {
+    margin: 0.25rem 0;
 }
 
 .nav-menu a {
     color: var(--text-color);
     text-decoration: none;
     display: block;
-    padding: 0.4rem 0.5rem;
+    padding: 0.4rem 0;
+    font-size: 0.95em;
     transition: color 0.2s;
-    white-space: normal;
-    word-wrap: break-word;
-    width: calc(100% - 1rem);
 }
 
 .nav-menu a:hover {
     color: var(--primary-color);
-}
-
-.nav-menu ul {
-    display: none;
-    padding-left: 1rem;
-    margin: 0.25rem 0;
-    border-left: 2px solid rgba(255,255,255,0.1);
-    width: calc(100% - 1rem);
-}
-
-.nav-menu li.active > ul {
-    display: block;
 }
 
 .overlay {
@@ -472,10 +413,14 @@ section {
     width: 100%;
     white-space: normal;
     word-wrap: break-word;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    opacity: 0.8;
 }
 
 .nav-menu ul {
-    display: none;
+    display: block;
     padding-left: 1.5rem;
     margin: 0.25rem 0;
     border-left: 2px solid rgba(255,255,255,0.1);
@@ -491,8 +436,4 @@ section {
     display: block;
     padding: 0.4rem 0.5rem;
     transition: color 0.2s;
-}
-
-.nav-menu a:hover {
-    color: var(--primary-color);
 }
