@@ -20,7 +20,21 @@ I když byl původně vytvořen pro osobní použití, ReMapper (a kód z něj o
 
 ## Začínáme
 
-Pro více informací navštivte naši [Wiki](pages/wiki.html).
+Pro více informací navštivte naši [Wiki](https://remappercz.vercel.app/).
+
+## Překládání
+
+Sekce Domů ✔️
+Sekce Wiki ✔️
+Sekce Nastavení ✔️
+Sekce Kód 50 %
+Sekce BeatMap ❌
+Sekce Heck Animation ❌
+Sekce Visuals ❌
+Pod sekce ❌
+Vivify ❌
+Math ❌
+Misc ❌
 
 ## Podpora
 
