@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalace - ReMapper CZ</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <h1>ReMapper CZ</h1>
+            <ul>
+                <li><a href="../index.html">Domů</a></li>
+                <li><a href="instalace.html">Instalace</a></li>
+                <li><a href="zaklady.html">Základy</a></li>
+                <li><a href="objekty.html">Objekty</a></li>
+                <li><a href="animace.html">Animace</a></li>
+                <li><a href="api.html">API Reference</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="wiki-content">
+        <h1>Instalace ReMapper</h1>
+        <p>Zde je návod, co musíte udělat jednorázově na vašem systému!</p>
+
+        <section class="install-section">
+            <h2>Instalace Deno</h2>
+            <p>ReMapper vyžaduje Deno pro svůj běh. Deno je runtime, který kompiluje a spouští TypeScript kód.</p>
+            
+            <div class="install-step">
+                <p>Otevřete Windows Powershell terminál:</p>
+                <img src="../images/windows-powershell-screenshot.png" alt="Windows Powershell" class="install-image">
+                
+                <p>Poté vložte následující příkaz do terminálu a nechte ho nainstalovat:</p>
+                <pre><code>irm https://deno.land/install.ps1 | iex</code></pre>
+                <img src="../images/instalace-deno-screenshot.png" alt="Deno Installation" class="install-image">
+            </div>
+        </section>
+
+        <section class="install-section">
+            <h2>VSCode Plugin</h2>
+            <p>Pokud používáte VSCode, budete potřebovat také nainstalovat rozšíření. Přejděte do záložky rozšíření a nainstalujte Deno.</p>
+            <img src="../images/deno-vscode-screenshot.png" alt="VSCode Deno Extension" class="install-image">
+        </section>
+
+        <section class="install-section">
+            <h2>Nastavení Výstupního Playlistu</h2>
+            <p>Při spouštění skriptů budete získávat "výstupní" kopii vaší mapy. Budete potřebovat, aby se tyto mapy objevily v playlistu/složce, kterou můžete hrát ve hře.</p>
+            
+            <ol>
+                <li>Najděte složku <code>Beat Saber_Data/CustomWIPLevels</code> a vytvořte v ní složku <code>OutputMaps</code>.</li>
+                <li>Najděte soubor <code>UserData/SongCore/folders.xml</code> a otevřete ho v textovém editoru.</li>
+                <li>Vložte následující kód:</li>
+            </ol>
+
+            <pre><code>&lt;folders&gt;
+  &lt;folder&gt;
+    &lt;Name&gt;Output Maps&lt;/Name&gt;
+    &lt;Path&gt;vaše cesta zde&lt;/Path&gt;
+    &lt;Pack&gt;2&lt;/Pack&gt;
+    &lt;WIP&gt;True&lt;/WIP&gt;
+  &lt;/folder&gt;
+&lt;/folders&gt;</code></pre>
+
+            <p>Musíte nahradit "vaše cesta zde" cestou ke složce OutputMaps, kterou jste vytvořili.</p>
+            
+            <div class="warning">
+                <p>⚠️ Playlist se nezobrazí, pokud neobsahuje žádné mapy! Zkuste do něj vložit mapu pro otestování funkčnosti.</p>
+            </div>
+
+            <img src="../images/vytvoreni-playlistu.png" alt="Vytvoření playlistu" class="install-image">
+            <img src="../images/mapy-screenshot.png" alt="Mapy v playlistu" class="install-image">
+        </section>
+
+        <section class="install-section">
+            <h2>Další Nástroje</h2>
+            
+            <h3>Blender Exporter</h3>
+            <p>Pokud plánujete importovat primitivní objekty z Blender scén do mapy, budete potřebovat ReMapper Blender Exporter. Instrukce k instalaci tohoto pluginu najdete <a href="#">zde</a>.</p>
+
+            <h3>Auto Script Refresh</h3>
+            <p>Pokud chcete, aby se váš skript automaticky aktualizoval při uložení nebo když se změní klíčové soubory (VELMI DOPORUČENO!), budete chtít nainstalovat Denon.</p>
+            
+            <p>Pro instalaci spusťte tento příkaz v Powershell okně:</p>
+            <pre><code>deno install -qAf --unstable --global https://deno.land/x/denon/denon.ts</code></pre>
+
+            <p>Pokud dostanete chybu typu "&lt;cesta&gt; cannot be loaded because running scripts is disabled on this system", zkuste spustit tento příkaz:</p>
+            <pre><code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
+            <p>A poté znovu spusťte instalační příkaz.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>České zpracování dokumentace: alexpomykacz | <a href="https://github.com/Swifter1243/ReMapper">Originální ReMapper</a></p>
+    </footer>
+</body>
+</html>
