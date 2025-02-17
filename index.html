@@ -10,9 +10,33 @@
     <nav>
         <div class="nav-content">
             <h1>ReMapper CZ</h1>
-            <a href="index.html" class="home-link">Domů</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
+
+    <div class="overlay"></div>
+    
+    <div class="sidebar">
+        <nav class="side-nav">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <!-- Kopírovat zbytek menu z template.html, ale upravit cesty -->
+                <li>
+                    <h3>Setup</h3>
+                    <ul>
+                        <li><a href="pages/instalace.html">Installing ReMapper</a></li>
+                        <li><a href="pages/setting-maps.html">Setting Maps Up</a></li>
+                        <li><a href="pages/workflow.html">Workflow</a></li>
+                    </ul>
+                </li>
+                <!-- ...zbytek menu struktura... -->
+            </ul>
+        </nav>
+    </div>
 
     <main>
         <h1>Vítejte v ReMapper!</h1>
@@ -47,5 +71,23 @@
     <footer>
         <p>České zpracování dokumentace: alexpomykacz | <a href="https://github.com/Swifter1243/ReMapper">Originální ReMapper</a></p>
     </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const sidebar = document.querySelector('.sidebar');
+        const overlay = document.querySelector('.overlay');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    </script>
 </body>
 </html>
