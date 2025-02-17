@@ -25,12 +25,22 @@ function generateMenu(inRoot = false) {
     // ... implementace ...
 }
 
-function initMenu() {
+document.addEventListener('DOMContentLoaded', () => {
+    const menuHeaders = document.querySelectorAll('.menu-header');
     const hamburger = document.querySelector('.hamburger');
     const sidebar = document.querySelector('.sidebar');
     const overlay = document.querySelector('.overlay');
     const sectionToggles = document.querySelectorAll('.section-toggle');
 
+    // Menu toggle
+    menuHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const parent = header.parentElement;
+            parent.classList.toggle('active');
+        });
+    });
+
+    // Hamburger menu
     hamburger.addEventListener('click', () => {
         sidebar.classList.toggle('active');
         overlay.classList.toggle('active');
@@ -55,7 +65,4 @@ function initMenu() {
             }
         });
     });
-}
-
-// Inicializace menu po načtení stránky
-document.addEventListener('DOMContentLoaded', initMenu);
+});
