@@ -377,3 +377,22 @@ section {
     opacity: 1;
     visibility: visible;
 }
+
+.submenu-header {
+    color: #888;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.submenu-item {
+    padding-left: 1rem;
+}
+
+.nav-menu h3 {
+    color: var(--primary-color);
+    margin: 1.5rem 0 0.5rem 0;
+    font-size: 1.1em;
+}
