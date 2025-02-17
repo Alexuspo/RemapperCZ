@@ -20,7 +20,7 @@
             <div class="note">
                 <p>Ve výchozím nastavení způsobí možnost fpfc nehratelnost hry ve VR. Nicméně jeden ze základních modů SiraUtil vám umožňuje přepínat FPFC stisknutím klávesy G a automaticky ho povoluje/zakazuje v závislosti na tom, zda máte aktivní headset.</p>
             </div>
-
+            
             <p>SiraUtil vám také dává možnost pozastavit/spustit a umožňuje vám skutečně ukončit písničku.</p>
         </section>
 
@@ -50,15 +50,95 @@ Could not find track [myTrack].</code></pre>
             </div>
         </section>
 
-        <!-- Continue with rest of sections following same pattern... -->
-
         <section class="workflow-section">
             <h2>Možnosti spuštění</h2>
-            <img src="../images/workflow-steam-options.png" alt="Steam možnosti spuštění" class="workflow-image">
-            <!-- ...rest of content... -->
+            <p>Steam verze Beat Saber umožňuje spustit hru s určitými příznaky (možnostmi spuštění), které říkají hře, jak se má spustit.</p>
+
+            <div class="guide-step">
+                <p>Možnosti spuštění můžete přidat kliknutím pravým tlačítkem na Beat Saber ve vaší knihovně a přejít do Obecného nastavení.</p>
+                <img src="../images/workflow-steam-options.png" alt="Steam možnosti spuštění" class="workflow-image">
+                <p>Jak je vidět výše, můžete mít více možností spuštění oddělených mezerou.</p>
+            </div>
+
+            <div class="note">
+                <p>Pokud používáte BSManager, tyto příznaky jsou automaticky přidány tlačítky v rozhraní. Máte možnost přidat další (například -aerolunaisthebestmodder) pomocí tlačítka "Pokročilé spuštění".</p>
+            </div>
         </section>
 
-        <!-- ... remaining sections ... -->
+        <section class="workflow-section">
+            <h2>Obnovení map</h2>
+            <p>Při vývoji map je nutné je obnovit, abyste viděli své změny.</p>
+
+            <ul>
+                <li>Pro změny v obtížnosti můžete použít hot reload.</li>
+                <li>Pro ostatní změny souborů (například Info.dat) budete muset obnovit seznam skladeb.</li>
+            </ul>
+
+            <h3>Obnovení seznamu skladeb</h3>
+            <p>Pro obnovení seznamu skladeb stiskněte Ctrl + R a poté znovu přejděte na skladbu.</p>
+
+            <div class="note">
+                <p>Poznámka: Pro úrovně ve složkách CustomLevels a CustomWIPLevels můžete použít R pro jejich obnovení. Nicméně, protože jsme nastavili vlastní playlist, není obnoven pomocí R.</p>
+            </div>
+        </section>
+
+        <section class="workflow-section">
+            <h2>Hot Reloading v obtížnostech</h2>
+            <p>Postupujte podle těchto pokynů pro nastavení hot reloadingu: <a href="https://github.com/Aeroluna/Heck/wiki/ReLoader">ReLoader Wiki</a> (také se podívejte na možnosti spuštění, pokud si nejste jistí).</p>
+
+            <p>Po nastavení budete moci procházet mapu a hot reloadovat určité prvky beatmapy. Hot reload pomocí mezerníku však neobnoví prostředí.</p>
+
+            <div class="guide-step">
+                <p>Pro obnovení prostředí byste měli jít do souboru UserData/Heck.json a změnit ReloadOnRestart na true.</p>
+                <img src="../images/workflow-heck-json.png" alt="Heck.json nastavení" class="workflow-image">
+            </div>
+
+            <p>Nyní, kdykoli obnovíte mapu pomocí R, prostředí se také obnoví.</p>
+        </section>
+
+        <section class="workflow-section">
+            <h2>Hledání mapy v seznamu skladeb</h2>
+            <p>Může být frustrující muset procházet celý seznam skladeb, abyste znovu našli svou mapu po obnovení seznamu skladeb, proto obvykle používám jeden ze dvou přístupů.</p>
+
+            <h3>Možnost 1: SongBrowser</h3>
+            <p>Můžete použít SongBrowser k filtrování seznamu skladeb podle názvu vaší mapy. To znamená, že pokaždé, když obnovíte playlisty, vaše mapa bude jediná, která se zobrazí v WIP playlistu.</p>
+
+            <div class="guide-steps">
+                <p>1. Klikněte na "Filter By" v dolní části seznamu skladeb.</p>
+                <img src="../images/workflow-filter-button.png" alt="Tlačítko filtru" class="workflow-image">
+                
+                <p>2. Klikněte na "Search".</p>
+                <img src="../images/workflow-search-button.png" alt="Tlačítko vyhledávání" class="workflow-image">
+                
+                <p>3. Vyhledejte svou mapu.</p>
+                <img src="../images/workflow-search-map.png" alt="Vyhledávání mapy" class="workflow-image">
+            </div>
+
+            <p>Nyní kdykoli stisknete Ctrl + R pro obnovení playlistů, můžete kliknout na výstupní playlist a okamžitě se zaměří na vaši mapu.</p>
+            <img src="../images/workflow-songbrowser.png" alt="SongBrowser ukázka" class="workflow-image">
+
+            <div class="tip">
+                <p>Výhodou je, že tento filtr se také uloží při ukončení a restartování hry.</p>
+            </div>
+
+            <h3>Možnost 2: BetterSongList</h3>
+            <p>Můžete použít BetterSongList pro zachování vaší pozice v seznamu skladeb při obnovení.</p>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>Výhody:</h4>
+                    <p>Nemusíte filtrovat svou skladbu</p>
+                </div>
+                <div class="cons">
+                    <h4>Nevýhody:</h4>
+                    <p>Budete muset znovu najít skladbu v seznamu pokaždé, když restartujete hru nebo přepnete playlisty</p>
+                </div>
+            </div>
+
+            <div class="note">
+                <p>BetterSongList je považován za modernější než SongBrowser a je typicky podporován rychleji a v novějších verzích.</p>
+            </div>
+        </section>
     </main>
 
     <footer>
