@@ -77,16 +77,26 @@
                         <li><a href="pages/light-iterators.html">Light Iterators</a></li>
                         <li><a href="pages/fog.html">Fog</a></li>
                         <li><a href="pages/environment.html">Environment and Geometry</a></li>
-                        <li class="submenu-header">Non-Vivify Models</li>
-                        <li class="submenu-item"><a href="pages/model-scene.html">Model Scene</a></li>
-                        <li class="submenu-item"><a href="pages/model-objects.html">Model Objects</a></li>
-                        <li class="submenu-item"><a href="pages/text.html">Text</a></li>
-                        <li class="submenu-header">Vivify</li>
-                        <li class="submenu-item"><a href="pages/vivify-basics.html">Vivify Basics</a></li>
-                        <li class="submenu-item"><a href="pages/destroyable-objects.html">Destroyable Objects</a></li>
-                        <li class="submenu-item"><a href="pages/loading-bundles.html">Loading Bundles</a></li>
-                        <li class="submenu-item"><a href="pages/materials.html">Materials</a></li>
-                        <li class="submenu-item"><a href="pages/prefabs.html">Prefabs</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-section">
+                    <button class="section-toggle">Non-Vivify Models</button>
+                    <ul class="submenu">
+                        <li><a href="pages/model-scene.html">Model Scene</a></li>
+                        <li><a href="pages/model-objects.html">Model Objects</a></li>
+                        <li><a href="pages/text.html">Text</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-section">
+                    <button class="section-toggle">Vivify</button>
+                    <ul class="submenu">
+                        <li><a href="pages/vivify-basics.html">Vivify Basics</a></li>
+                        <li><a href="pages/destroyable-objects.html">Destroyable Objects</a></li>
+                        <li><a href="pages/loading-bundles.html">Loading Bundles</a></li>
+                        <li><a href="pages/materials.html">Materials</a></li>
+                        <li><a href="pages/prefabs.html">Prefabs</a></li>
                     </ul>
                 </li>
 
@@ -152,41 +162,6 @@
         <p>České zpracování dokumentace: alexpomykacz | <a href="https://github.com/Swifter1243/ReMapper">Originální ReMapper</a></p>
     </footer>
 
-    <script>
-        // Menu toggle
-        const hamburger = document.querySelector('.hamburger');
-        const sidebar = document.querySelector('.sidebar');
-        const overlay = document.querySelector('.overlay');
-        const sectionToggles = document.querySelectorAll('.section-toggle');
-
-        hamburger.addEventListener('click', toggleMenu);
-        overlay.addEventListener('click', closeMenu);
-
-        function toggleMenu() {
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
-
-        function closeMenu() {
-            sidebar.classList.remove('active');
-            overlay.classList.remove('active');
-            hamburger.classList.remove('active');
-        }
-
-        // Rozbalovací sekce
-        sectionToggles.forEach(toggle => {
-            toggle.addEventListener('click', () => {
-                const submenu = toggle.nextElementSibling;
-                toggle.classList.toggle('active');
-                
-                if (submenu.style.maxHeight) {
-                    submenu.style.maxHeight = null;
-                } else {
-                    submenu.style.maxHeight = submenu.scrollHeight + "px";
-                }
-            });
-        });
-    </script>
+    <script src="js/menu.js"></script>
 </body>
 </html>
