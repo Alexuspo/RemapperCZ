@@ -175,3 +175,33 @@ section {
 .wiki-button:hover {
     background: #1e4caf;
 }
+
+.support-channels {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.czech-support {
+    background: rgba(41, 98, 255, 0.1);
+    border-left: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 0 4px 4px 0;
+}
+
+.original-support {
+    background: rgba(128, 128, 128, 0.1);
+    border-left: 4px solid #666;
+    padding: 1.5rem;
+    border-radius: 0 4px 4px 0;
+}
+
+.czech-support h3,
+.original-support h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.original-support h3 {
+    color: #888;
+}
