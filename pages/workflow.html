@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pracovní postup - ReMapper CZ</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Standardní navigace a menu z template -->
+    <!-- ...existing navigation and menu code... -->
+
+    <main class="wiki-content">
+        <h1>Pracovní postup</h1>
+
+        <section class="workflow-section">
+            <h2>Náhled map na počítači</h2>
+            <p>Základním krokem při vývoji map je nastavení hry pro práci na počítači. Toto se označuje jako "FPFC" (First Person Flying Controller). Pro jeho povolení budete potřebovat fpfc v možnostech spuštění hry.</p>
+
+            <div class="note">
+                <p>Ve výchozím nastavení způsobí možnost fpfc nehratelnost hry ve VR. Nicméně jeden ze základních modů SiraUtil vám umožňuje přepínat FPFC stisknutím klávesy G a automaticky ho povoluje/zakazuje v závislosti na tom, zda máte aktivní headset.</p>
+            </div>
+
+            <p>SiraUtil vám také dává možnost pozastavit/spustit a umožňuje vám skutečně ukončit písničku.</p>
+        </section>
+
+        <section class="workflow-section">
+            <h2>Zobrazení herního logu</h2>
+            <p>Při vývoji map je možné něco pokazit a způsobit, že hra vyhodí chyby. Je důležité vidět log, abyste věděli, kdy k těmto chybám dochází.</p>
+
+            <div class="tip">
+                <p>Terminálové okno zobrazující herní log můžete povolit pomocí možnosti spuštění --verbose.</p>
+            </div>
+        </section>
+
+        <section class="workflow-section">
+            <h2>Čtení chyb mapy</h2>
+            <p>Některé chyby mohou být pro běžného uživatele nesrozumitelné a měly by být nahlášeny autorovi modu. Některé jsou však mnohem přívětivější a poskytují užitečné informace.</p>
+
+            <div class="code-example">
+                <img src="../images/workflow-error-trace.png" alt="Stack trace chyby" class="workflow-image">
+                <p class="caption">Oblast zvýrazněná modře se nazývá stack trace a v podstatě popisuje, kde v programu k chybě došlo.</p>
+            </div>
+
+            <div class="example-error">
+                <p>Nad tím můžete vidět čitelnější chybovou zprávu:</p>
+                <pre><code>Could not parse custom data for custom event [AnimateTrack] at [0]
+Could not find track [myTrack].</code></pre>
+                <p>To znamená, že existuje událost AnimateTrack na době 0, která se pokouší animovat stopu, kterou žádné objekty nemají. Tyto informace jsou klíčové pro řešení problémů.</p>
+            </div>
+        </section>
+
+        <!-- Continue with rest of sections following same pattern... -->
+
+        <section class="workflow-section">
+            <h2>Možnosti spuštění</h2>
+            <img src="../images/workflow-steam-options.png" alt="Steam možnosti spuštění" class="workflow-image">
+            <!-- ...rest of content... -->
+        </section>
+
+        <!-- ... remaining sections ... -->
+    </main>
+
+    <footer>
+        <p>České zpracování dokumentace: alexpomykacz | <a href="https://github.com/Swifter1243/ReMapper">Originální ReMapper</a></p>
+    </footer>
+
+    <script src="../js/menu.js"></script>
+</body>
+</html>
