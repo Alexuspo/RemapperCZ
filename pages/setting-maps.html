@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nastavení map - ReMapper CZ</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- ...existing navigation code... -->
+
+    <main class="wiki-content">
+        <h1>Nastavení map</h1>
+        <p>Zde je návod, co musíte udělat pro každou mapu zvlášť!</p>
+
+        <section class="install-section">
+            <h2>Nastavení pracovního prostoru</h2>
+            <p>Tento tutoriál používá Visual Studio Code.</p>
+
+            <p>Pojďme nastavit náš pracovní prostor! V programu VSCode jděte do File > Open Folder. Najděte mapu, na které budete pracovat, a dvakrát na ni klikněte.</p>
+
+            <div class="install-step">
+                <img src="../images/vscode-open-folder.png" alt="Otevření složky ve VSCode" class="install-image">
+            </div>
+
+            <p>V průzkumníku souborů byste měli vidět hierarchii mapy. Pokud ji nevidíte, klikněte na ikonu, na kterou ukazuje červená šipka.</p>
+
+            <div class="install-step">
+                <img src="../images/vscode-file-explorer.png" alt="Průzkumník souborů VSCode" class="install-image">
+            </div>
+
+            <p>Je velmi důležité, aby VSCode rozpoznal, že pracujeme v této složce. Mnoho věcí závisí na tom, že je naše mapa považována za pracovní prostor. Dokonce můžeme uložit stav našeho okna jako soubor, takže ho můžeme jednoduše znovu otevřít dvojklikem, kdykoli se k němu budeme chtít vrátit.</p>
+
+            <p>Jděte do File > Save Workspace As... a uložte soubor do složky s vaší mapou.</p>
+
+            <div class="install-step">
+                <img src="../images/vscode-save-workspace.png" alt="Uložení pracovního prostoru" class="install-image">
+            </div>
+
+            <p>Nakonec řekneme VSCode, že pro tento projekt používáme Deno.</p>
+
+            <p>Otevřete paletu příkazů pomocí Ctrl + Shift + P a vyhledejte Deno: Enable. Klikněte na něj a potvrďte vše.</p>
+
+            <div class="install-step">
+                <img src="../images/vscode-deno-enable.png" alt="Povolení Deno" class="install-image">
+            </div>
+        </section>
+
+        <section class="install-section">
+            <h2>Přidání skriptových souborů</h2>
+            <p>Nyní je čas použít náš nástroj pro nastavení!</p>
+
+            <p>Jděte do Terminal > New Terminal pro otevření integrovaného Powershell okna ve složce vaší mapy.</p>
+
+            <div class="install-step">
+                <img src="../images/vscode-new-terminal.png" alt="Nový terminál" class="install-image">
+            </div>
+
+            <p>Pokud jste vše udělali správně, měli byste vidět cestu k vašemu projektu v okně terminálu.</p>
+
+            <div class="install-step">
+                <img src="../images/terminal-path.png" alt="Cesta v terminálu" class="install-image">
+            </div>
+
+            <p>Nyní spusťte příkaz pro nastavení. Pokud se spustí úspěšně, měli byste vidět nové soubory ve vaší hierarchii! Klikněte na soubor script.ts.</p>
+
+            <div class="install-step">
+                <img src="../images/script-files.png" alt="Skriptové soubory" class="install-image">
+            </div>
+
+            <p>Toto bude váš základní skript, kde budete provádět změny v beatmapě.</p>
+        </section>
+
+        <section class="install-section">
+            <h2>Spuštění skriptu</h2>
+            <p>Pokud používáte nejnovější verzi ReMapper poprvé, odkaz v příkazu import * as rm vám způsobí problémy s hlášením, že závislost není vyřešena! To proto, že Deno ukládá balíčky do mezipaměti na vašem počítači, ale ne automaticky.</p>
+
+            <p>Pro uložení balíčku ReMapper do mezipaměti na vašem počítači najeďte myší nad URL v příkazu a držte alt. Měli byste vidět možnost Quick Fix. Klikněte na ni a vyberte možnost, která vám umožní uložit závislost do mezipaměti.</p>
+
+            <div class="install-step">
+                <img src="../images/dependency-fix-1.png" alt="Oprava závislosti 1" class="install-image">
+                <img src="../images/dependency-fix-2.png" alt="Oprava závislosti 2" class="install-image">
+            </div>
+
+            <p>Pro spuštění skriptu máme dvě možnosti, obě se zadávají do terminálu:</p>
+
+            <h3>Standardní Deno</h3>
+            <pre><code>deno run --no-check --allow-all script.ts</code></pre>
+            <p>S touto metodou budete muset spustit tento příkaz v terminálu pokaždé, když budete chtít spustit skript. Nicméně můžete v terminálu stisknout šipku nahoru na klávesnici pro zobrazení stejného příkazu znovu!</p>
+
+            <h3>Denon</h3>
+            <pre><code>denon rm</code></pre>
+            <p>Toto zavolá soubor scripts.json, který by měl být ve vaší složce s mapou, aby automaticky spustil příkaz Deno pokaždé, když se aktualizují klíčové soubory. Toto se spustí i když uložíte váš script.ts (Ctrl + S) bez jakýchkoliv změn!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>České zpracování dokumentace: alexpomykacz | <a href="https://github.com/Swifter1243/ReMapper">Originální ReMapper</a></p>
+    </footer>
+
+    <script src="../js/menu.js"></script>
+</body>
+</html>
