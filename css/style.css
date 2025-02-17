@@ -112,3 +112,50 @@ footer a {
     color: var(--primary-color);
     text-decoration: none;
 }
+
+.wiki-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.wiki-header .note {
+    background: #444;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.warning {
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #ffc107;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.important {
+    color: #ff4444;
+    font-weight: bold;
+}
+
+.ide-preview {
+    margin: 2rem 0;
+    background: var(--code-background);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.ide-preview img {
+    max-width: 100%;
+    border: 1px solid #444;
+}
+
+.caption {
+    text-align: center;
+    color: #aaa;
+    margin-top: 1rem;
+}
+
+section {
+    margin: 3rem 0;
+}
