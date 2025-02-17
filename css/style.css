@@ -292,12 +292,11 @@ section {
     width: 300px;
     height: 100vh;
     background: #0d0d0d;
-    padding: 2rem 1rem;
+    padding: 1rem;
     transform: translateX(100%);
     transition: transform 0.3s ease;
     overflow-y: auto;
     z-index: 1001;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
 }
 
 .sidebar.active {
@@ -403,18 +402,23 @@ section {
     padding: 0;
     margin: 0;
     list-style: none;
+    max-width: 100%;
 }
 
 .nav-menu > li {
     margin: 0.5rem 0;
+    width: 100%;
 }
 
 .nav-menu a {
     color: var(--text-color);
     text-decoration: none;
     display: block;
-    padding: 0.5rem;
+    padding: 0.4rem 0.5rem;
     transition: color 0.2s;
+    white-space: normal;
+    word-wrap: break-word;
+    width: calc(100% - 1rem);
 }
 
 .nav-menu a:hover {
@@ -422,10 +426,15 @@ section {
 }
 
 .nav-menu ul {
-    list-style: none;
-    padding-left: 1.5rem;
-    margin: 0.5rem 0;
-    border-left: 1px solid rgba(255,255,255,0.1);
+    display: none;
+    padding-left: 1rem;
+    margin: 0.25rem 0;
+    border-left: 2px solid rgba(255,255,255,0.1);
+    width: calc(100% - 1rem);
+}
+
+.nav-menu li.active > ul {
+    display: block;
 }
 
 .overlay {
@@ -460,6 +469,9 @@ section {
     padding: 0.5rem;
     cursor: pointer;
     user-select: none;
+    width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 .nav-menu ul {
