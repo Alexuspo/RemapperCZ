@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Přehled - ReMapper CZ</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Standardní navigace -->
+    <nav>
+        <div class="nav-content">
+            <h1>ReMapper CZ</h1>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="overlay"></div>
+    
+    <!-- Stejné menu jako v ostatních stránkách -->
+    <aside class="sidebar">
+        <!-- ...existing menu code... -->
+    </aside>
+
+    <main class="wiki-content">
+        <div class="page-header animation-fadeIn">
+            <h1>Přehled ReMapper</h1>
+            <div class="header-description">
+                <p>Seznamte se se základními koncepty a strukturou ReMapper projektu</p>
+            </div>
+        </div>
+
+        <section class="introduction animation-slideIn">
+            <h2>Kde začít</h2>
+            <p>Můžete začít na kterékoliv stránce, která obsahuje funkci, kterou chcete využít. Každá stránka obsahuje:</p>
+            <div class="info-box">
+                <ul>
+                    <li>Přehled funkcionalit</li>
+                    <li>Předpoklady pro použití</li>
+                    <li>Praktické příklady</li>
+                    <li>Odkazy na související témata</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="prerequisites animation-slideIn">
+            <h2>Předpoklady a struktura</h2>
+            <div class="info-box">
+                <p>Na každé stránce najdete sekci "Předpoklady", která vás navede k základním konceptům, které byste měli znát. Všechny tyto koncepty vedou zpět k <a href="pipelines.html">Pipeline</a>, která tvoří základ vašeho projektu.</p>
+            </div>
+            <p class="note">Tento systém vám umožní postupně se propracovat od základních konceptů ke složitějším funkcím.</p>
+        </section>
+
+        <section class="workflow-overview animation-slideIn">
+            <h2>Základní workflow</h2>
+            <p>Váš skript bude typicky následovat tuto strukturu:</p>
+
+            <div class="workflow-steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <h3>Vytvoření pipeline</h3>
+                    <div class="step-content">
+                        <p>První krok je vytvoření nové pipeline</p>
+                        <pre><code>const map = new Pipeline();</code></pre>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <h3>Vytvoření obtížnosti</h3>
+                    <div class="step-content">
+                        <p>Vytvořte novou obtížnost v pipeline</p>
+                        <pre><code>const diff = map.getDifficulty("ExpertPlusLawless");</code></pre>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <h3>Úprava obtížnosti</h3>
+                    <div class="step-content">
+                        <p>Přidejte vaše úpravy do obtížnosti</p>
+                        <pre><code>diff.addEnvironment();
+diff.addNotesMods();
+// další úpravy...</code></pre>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <h3>Export pipeline</h3>
+                    <div class="step-content">
+                        <p>Exportujte vaši pipeline do hry</p>
+                        <pre><code>await map.save();</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="next-steps animation-fadeIn">
+            <h2>Další kroky</h2>
+            <p>Pro pokračování doporučujeme:</p>
+            <div class="links-grid">
+                <a href="pipelines.html" class="link-card">
+                    <h3>Pipeline</h3>
+                    <p>Pochopení základní struktury projektů</p>
+                </a>
+                <a href="basic-notemods.html" class="link-card">
+                    <h3>Základní notové modifikace</h3>
+                    <p>První kroky v úpravě map</p>
+                </a>
+                <a href="workflow.html" class="link-card">
+                    <h3>Pracovní postup</h3>
+                    <p>Detailní průvodce vývojem</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>České zpracování dokumentace: alexpomykacz | <a href="https://github.com/Swifter1243/ReMapper">Originální ReMapper</a></p>
+    </footer>
+
+    <script src="../js/menu.js"></script>
+</body>
+</html>
