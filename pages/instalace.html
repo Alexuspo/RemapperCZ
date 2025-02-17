@@ -10,9 +10,34 @@
     <nav>
         <div class="nav-content">
             <h1>ReMapper CZ</h1>
-            <a href="../index.html" class="home-link">Domů</a>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
+    <div class="overlay"></div>
+    
+    <aside class="sidebar">
+        <nav class="side-nav">
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                
+                <li class="menu-section">
+                    <button class="section-toggle">Setup</button>
+                    <ul class="submenu">
+                        <li><a href="instalace.html">Installing ReMapper</a></li>
+                        <li><a href="setting-maps.html">Setting Maps Up</a></li>
+                        <li><a href="workflow.html">Workflow</a></li>
+                    </ul>
+                </li>
+
+                <!-- Kopírovat zbytek menu struktury z wiki.html -->
+            </ul>
+        </nav>
+    </aside>
 
     <main class="wiki-content">
         <h1>Instalace ReMapper</h1>
