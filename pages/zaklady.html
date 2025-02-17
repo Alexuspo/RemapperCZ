@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Základy - ReMapper CZ</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav>
+        <!-- Same navigation as index.html -->
+    </nav>
+
+    <main>
+        <h1>Základy ReMapper</h1>
+
+        <h2>Vytvoření projektu</h2>
+        <pre><code>
+import { map } from "remapper";
+
+map.setSettings({
+    bpm: 120,
+    noteJumpSpeed: 16
+});
+        </code></pre>
+
+        <h2>Základní objekty</h2>
+        <h3>Notes (Kostky)</h3>
+        <pre><code>
+const note = new Note(0);  // Vytvoření noty v čase 0
+note.type = 0;            // Červená kostka
+note.direction = 8;       // Směr nahoru
+note.push();             // Přidání do mapy
+        </code></pre>
+
+        <h3>Walls (Zdi)</h3>
+        <pre><code>
+const wall = new Wall(0, 4);  // Zeď od času 0 do 4
+wall.scale = [1, 1, 1];      // Velikost zdi
+wall.push();
+        </code></pre>
+
+        <h2>Animace</h2>
+        <p>ReMapper používá systém keyframů pro animace:</p>
+        <pre><code>
+objekt.animate([
+    [0, [1, 1, 1]],     // Počáteční stav
+    [1, [2, 2, 2]]      // Konečný stav
+], "scale");            // Animovaná vlastnost
+        </code></pre>
+    </main>
+
+    <footer>
+        <p>ReMapper CZ Dokumentace - <a href="https://github.com/Swifter1243/ReMapper">Originální ReMapper</a></p>
+    </footer>
+</body>
+</html>
