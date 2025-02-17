@@ -49,6 +49,15 @@ main {
     padding: 0 1rem;
 }
 
+main ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+main ul li {
+    margin: 0.5rem 0;
+}
+
 pre {
     background: var(--code-background);
     padding: 1rem;
@@ -76,6 +85,20 @@ code {
     color: var(--primary-color);
     position: absolute;
     left: 0;
+}
+
+.preview-image {
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.cta {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: rgba(41, 98, 255, 0.1);
+    border-radius: 8px;
+    text-align: center;
 }
 
 footer {
