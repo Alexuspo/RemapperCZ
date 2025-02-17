@@ -333,45 +333,45 @@ section {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-.menu-section {
-    display: none;
-}
-
-.section-toggle {
-    display: none;
-}
-
+.menu-section,
+.section-toggle,
 .submenu {
     display: none;
 }
 
 .nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     padding: 0;
     margin: 0;
     list-style: none;
+    width: 100%;
 }
 
 .nav-menu ul {
-    margin: 0;
+    width: 100%;
     padding-left: 1.5rem;
-    display: block;
+    margin: 0.5rem 0;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
     border-left: 2px solid rgba(255,255,255,0.1);
-    margin-left: 0.5rem;
-    padding-left: 1rem;
 }
 
 .nav-menu li {
-    margin: 0.25rem 0;
+    width: 100%;
 }
 
 .nav-menu a {
+    display: block;
     color: var(--text-color);
     text-decoration: none;
-    display: block;
     padding: 0.4rem 0;
     font-size: 0.95em;
     transition: color 0.2s;
+    width: 100%;
 }
 
 .nav-menu a:hover {
@@ -404,19 +404,13 @@ section {
 
 .menu-header {
     display: block;
-    color: var(--primary-color);
+    color: #fff;
     font-weight: bold;
     font-size: 1.1em;
-    padding: 0.5rem;
-    cursor: pointer;
-    user-select: none;
+    padding: 0.5rem 0;
+    margin-top: 1rem;
     width: 100%;
-    white-space: normal;
-    word-wrap: break-word;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #fff;
-    opacity: 0.8;
+    text-align: left;
 }
 
 .nav-menu ul {
