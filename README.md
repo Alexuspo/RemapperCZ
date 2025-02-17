@@ -1,19 +1,10 @@
-<<<<<<< HEAD
-=======
 ![remapper-preview](https://github.com/user-attachments/assets/599f6913-aae5-421e-ab50-c776a5ef5d9d)
 
-
->>>>>>> b4331382d4a9d99e0c278b7fc9a9d16c95a2df8d
 # Vítejte v ReMapper!
 
 Toto je TypeScript knihovna navržená pro vytváření Beat Saber modchartů. Modeluje schéma beatmapy pomocí obalových tříd a umožňuje jednodušší a typově bezpečný způsob skriptování.
 
-<<<<<<< HEAD
-![ReMapper Preview](images/remapper-preview.png)
-=======
 ![411282055-3837cb78-e8ae-4b60-bc4e-883fb40ffcea (2)](https://github.com/user-attachments/assets/6db1e59f-d99f-4608-8b78-f7c2b605f410)
-
->>>>>>> b4331382d4a9d99e0c278b7fc9a9d16c95a2df8d
 
 Implementuje funkce ze základní hry a také z Aeroluna's Heck suite:
 - Schéma základní hry
