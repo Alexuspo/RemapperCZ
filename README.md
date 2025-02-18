@@ -1,6 +1,6 @@
 ![remapper-preview](https://github.com/user-attachments/assets/599f6913-aae5-421e-ab50-c776a5ef5d9d)
 
-# Vítejte v ReMapper!
+# Vítejte v ReMapperu!
 
 Toto je TypeScript knihovna navržená pro vytváření Beat Saber modchartů. Modeluje schéma beatmapy pomocí obalových tříd a umožňuje jednodušší a typově bezpečný způsob skriptování.
 
