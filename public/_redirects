@@ -1,0 +1,10 @@
+# Redirect rule to handle missing .html extensions
+/*  /index.html 200
+/wiki/*  /wiki/index.html 200
+
+# Redirect Markdown links to HTML
+/*.md  /:splat 301
+/wiki/*.md  /wiki/:splat 301
+
+# Handle missing trailing slashes
+/*/  /:splat 301

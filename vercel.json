@@ -2,5 +2,22 @@
   "version": 2,
   "outputDirectory": "public",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/wiki/:path*", "destination": "/wiki/:path*" },
+    { "source": "/:path*", "destination": "/:path*" },
+    { "source": "/:path*/", "destination": "/:path*" },
+    { "source": "/:path*.md", "destination": "/:path*" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    }
+  ]
 }

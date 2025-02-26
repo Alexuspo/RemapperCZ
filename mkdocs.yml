@@ -2,6 +2,9 @@ site_name: RemapperCZ
 site_description: Dokumentace k projektu RemapperCZ
 site_url: https://remappercz.vercel.app
 
+# Add this section to ensure proper URL generation
+use_directory_urls: true
+
 theme:
   name: material
   language: cs
@@ -105,6 +108,12 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.inlinehilite
   - admonition
+
+# Extra configurations for proper URL handling
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Alexuspo/RemapperCZ
 
 # Autorská práva
 copyright: Copyright &copy; 2023 RemapperCZ
