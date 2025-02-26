@@ -1,0 +1,108 @@
+site_name: RemapperCZ
+site_description: Dokumentace k projektu RemapperCZ
+site_url: https://remappercz.vercel.app
+
+theme:
+  name: material
+  palette:
+    # Scheme
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/toggle-switch
+        name: Přepnout na světlý režim
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Přepnout na tmavý režim
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+
+# Navigační menu
+nav:
+  - Wiki:
+      - Přehled: wiki/index.md
+      - Nastavení:
+          - Instalace ReMapper: wiki/installation.md
+      - Nastavení map: wiki/map-settings.md
+      - Pracovní postup: wiki/workflow.md
+  - Kód:
+      - Přehled: code/index.md
+      - Pipeliny: code/pipelines.md
+  - Beatmapa:
+      - Informace: beatmap/info.md
+      - Obtížnost: beatmap/difficulty.md
+      - Objekty beatmapy: beatmap/objects.md
+      - Herní objekty: beatmap/game-objects.md
+      - Zdi: beatmap/walls.md
+      - Základní notové modifikace: beatmap/note-mods.md
+      - Iterátory not: beatmap/note-iterators.md
+      - Základní události: beatmap/basic-events.md
+      - V3 události: beatmap/v3-events.md
+      - Vlastní události: beatmap/custom-events.md
+  - Heck Animace:
+      - Heck stopy a animace: heck/tracks-animations.md
+      - Přechody: heck/transitions.md
+      - Typy bodů: heck/point-types.md
+      - Nástroje pro body: heck/point-tools.md
+      - 'Pečení animací': heck/baking.md  # Oprava: použití apostrofů místo uvozovek
+      - Nastavení animací: heck/animation-settings.md
+  - Vizuální prvky:
+      - Základní osvětlení: visual/basic-lighting.md
+      - Iterátory světel: visual/light-iterators.md
+      - Mlha: visual/fog.md
+      - Prostředí a geometrie: visual/environment-geometry.md
+  - Non-Vivify Modely:
+      - Modelová scéna: models/model-scene.md
+      - Modelové objekty: models/model-objects.md
+      - Text: models/text.md
+  - Vivify:
+      - Základy Vivify: vivify/basics.md
+      - Zničitelné objekty: vivify/destructibles.md
+      - Načítání balíčků: vivify/package-loading.md
+      - Materiály: vivify/materials.md
+      - Prefaby: vivify/prefabs.md
+  - Matematika:
+      - Práce s poli: math/arrays.md
+      - Práce s vektory: math/vectors.md
+      - Transformační nástroje: math/transformations.md
+      - Maticové nástroje: math/matrices.md
+      - Rotační nástroje: math/rotations.md
+      - Lerp: math/lerp.md
+      - Náhodná čísla: math/random.md
+      - Zaokrouhlování: math/rounding.md
+      - Šum: math/noise.md
+  - Ostatní:
+      - Nastavení ReMapper: misc/remapper-settings.md
+      - Systém mezipaměti: misc/cache-system.md
+      - Barvy: misc/colors.md
+      - Obrázky: misc/images.md
+
+# Repozitář
+repo_name: Alexuspo/RemapperCZ
+repo_url: https://github.com/Alexuspo/RemapperCZ
+edit_uri: edit/main/docs/
+
+# Rozšíření Markdown
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+
+# Autorská práva
+copyright: Copyright &copy; 2023 RemapperCZ
