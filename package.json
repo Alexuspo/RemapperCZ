@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "RemapperCZ documentation site",
   "scripts": {
-    "build": "echo 'No build step needed for static site'"
+    "build": "pip install -r requirements.txt && mkdocs build"
   },
   "engines": {
     "node": ">=14.x"
