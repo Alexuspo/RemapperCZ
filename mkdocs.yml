@@ -4,6 +4,7 @@ site_url: https://remappercz.vercel.app
 
 theme:
   name: material
+  language: cs
   palette:
     # Scheme
     - media: "(prefers-color-scheme: dark)"
@@ -33,6 +34,7 @@ theme:
 
 # Navigační menu
 nav:
+  - Domů: index.md
   - Wiki:
       - Přehled: wiki/index.md
       - Nastavení:
@@ -98,11 +100,11 @@ edit_uri: edit/main/docs/
 
 # Rozšíření Markdown
 markdown_extensions:
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
   - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
   - pymdownx.inlinehilite
+  - admonition
 
 # Autorská práva
 copyright: Copyright &copy; 2023 RemapperCZ
