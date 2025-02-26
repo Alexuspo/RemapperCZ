@@ -1,12 +1,16 @@
-# Wiki ReMapper
+# RemapperCZ Wiki
 
-Vítejte v sekci Wiki pro RemapperCZ. Tato část dokumentace poskytuje přehled o funkcích a použití nástroje ReMapper.
+Vítejte v oficiální dokumentaci projektu RemapperCZ.
 
-![](2025-02-26-11-11-46.png)
+## Co je RemapperCZ?
 
-## Obsah sekce
+RemapperCZ je česká dokumentace k nástroji ReMapper, který slouží k vytváření a úpravě map pro hru Beat Saber.
 
-* [Nastavení](settings.md) - Základní nastavení nástroje
-* [Instalace ReMapper](installation.md) - Postup instalace
-* [Nastavení map](map-settings.md) - Konfigurace map
-* [Pracovní postup](workflow.md) - Efektivní pracovní postupy
+## Jak začít
+
+Nejprve se podívejte na [Instalaci ReMapper](installation.md) a poté na [Nastavení map](../map-settings.md).
+
+## Užitečné odkazy
+
+- [GitHub repositář](https://github.com/Alexuspo/RemapperCZ)
+- [Pracovní postup](../workflow.md) - jak začít vytvářet vlastní mapy
