@@ -12,6 +12,8 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            opacity: 0; /* Start invisible to prevent flashing */
+            transition: opacity 0.2s ease;
         }
         a {
             color: #3f51b5;
@@ -37,79 +39,95 @@
         .button:hover {
             background-color: #303f9f;
         }
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-left-color: #3f51b5;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
     <script>
-        // This script attempts to fix common 404 issues with MkDocs paths
-        document.addEventListener('DOMContentLoaded', function() {
+        // Execute immediately before DOM fully loads for max speed
+        (function() {
             let path = window.location.pathname;
             
-            // Try to redirect to common path variations
-            const tryPaths = [];
-            
-            // Remove .md extension if present (common mistake in links)
+            // Instant redirect attempts for common cases
             if (path.endsWith('.md')) {
-                tryPaths.push(path.substring(0, path.length - 3));
+                window.location.replace(path.substring(0, path.length - 3));
+                return;
             }
             
-            // Add index.html if path ends with /
             if (path.endsWith('/')) {
-                tryPaths.push(path + 'index.html');
-                tryPaths.push(path.substring(0, path.length - 1));
-            } 
-            
-            // Remove .html extension (for clean URLs)
-            if (path.endsWith('.html')) {
-                tryPaths.push(path.substring(0, path.length - 5));
-            } else {
-                // Add .html extension
-                tryPaths.push(path + '.html');
+                window.location.replace(path.substring(0, path.length - 1));
+                return;
             }
             
-            // Add trailing slash
-            if (!path.endsWith('/')) {
-                tryPaths.push(path + '/');
-                tryPaths.push(path + '/index.html');
-            }
+            // Check common patterns
+            let patterns = [
+                // Try without .html
+                path.endsWith('.html') ? path.substring(0, path.length - 5) : null,
+                // Try with .html
+                !path.endsWith('.html') ? path + '.html' : null,
+                // Try adding index
+                path + '/index',
+                // Try with index.html
+                path + '/index.html',
+                // Try wiki path
+                !path.includes('/wiki/') ? '/wiki' + path : null,
+                // Try parent path
+                path.includes('/') ? path.substring(0, path.lastIndexOf('/')) : null
+            ];
             
-            // Try common wiki paths
-            if (!path.includes('wiki/') && !path.includes('index')) {
-                tryPaths.push('/wiki' + path);
-                tryPaths.push('/wiki/' + path.substring(1));
-            }
+            // Filter out null values
+            patterns = patterns.filter(p => p !== null);
             
-            // Display attempted paths in the debug info
-            const debugElement = document.getElementById('debug-info');
-            if (debugElement) {
-                debugElement.innerHTML = 'Vyzkoušené cesty: ' + tryPaths.join(', ');
-            }
-            
-            // Function to check if a path exists
-            function checkPath(pathToCheck, index) {
-                if (index >= tryPaths.length) {
-                    return; // No more paths to try
-                }
-                
-                fetch(pathToCheck)
+            // Create image objects to test paths quickly
+            function tryLoad(url, callback) {
+                fetch(url, { method: 'HEAD' })
                     .then(response => {
-                        if (response.ok) {
-                            window.location.href = pathToCheck;
-                        } else {
-                            checkPath(tryPaths[index], index + 1);
-                        }
+                        if (response.ok) callback(url);
                     })
-                    .catch(() => {
-                        checkPath(tryPaths[index], index + 1);
-                    });
+                    .catch(() => {});
             }
             
-            // Start checking paths
-            if (tryPaths.length > 0) {
-                checkPath(tryPaths[0], 1);
-            }
-        });
+            // Try loading all patterns at once
+            patterns.forEach(url => {
+                if (url) tryLoad(url, foundUrl => {
+                    window.location.replace(foundUrl);
+                });
+            });
+            
+            // Fallback to display the 404 page after a delay
+            setTimeout(() => {
+                document.body.style.opacity = 1;
+                document.getElementById('loading').style.display = 'none';
+            }, 300);
+        })();
     </script>
 </head>
 <body>
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+    </div>
+    
     <h1 class="error-code">404</h1>
     <h2>Stránka nenalezena</h2>
     <p>Omlouváme se, ale stránka, kterou hledáte, nebyla nalezena.</p>
@@ -121,6 +139,5 @@
     
     <hr>
     <p><small>Pokud problém přetrvává, kontaktujte správce nebo navštivte <a href="https://github.com/Alexuspo/RemapperCZ">GitHub repozitář</a>.</small></p>
-    <div id="debug-info" style="font-size: 10px; color: #999; margin-top: 40px;"></div>
 </body>
 </html>

@@ -4,10 +4,17 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/wiki/:path*", "destination": "/wiki/:path*" },
-    { "source": "/:path*", "destination": "/:path*" },
-    { "source": "/:path*/", "destination": "/:path*" },
-    { "source": "/:path*.md", "destination": "/:path*" }
+    { "source": "/:path(.+)/index", "destination": "/:path" },
+    { "source": "/:path(.+)/index.html", "destination": "/:path" },
+    { "source": "/:path(.+).md", "destination": "/:path" },
+    { "source": "/wiki/:path(.+)/index", "destination": "/wiki/:path" },
+    { "source": "/wiki/:path(.+)/index.html", "destination": "/wiki/:path" },
+    { "source": "/wiki/:path(.+).md", "destination": "/wiki/:path" },
+    { "source": "/:path(.*)", "destination": "/:path" }
+  ],
+  "redirects": [
+    { "source": "/:path(.+)/", "destination": "/:path", "permanent": true },
+    { "source": "/wiki/:path(.+)/", "destination": "/wiki/:path", "permanent": true }
   ],
   "headers": [
     {

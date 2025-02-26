@@ -32,5 +32,11 @@ echo Copying generated files to public directory...
 if not exist public mkdir public
 xcopy /E /I /Y site\* public\
 
+:: Add Vercel-specific files
+echo Adding Vercel configuration files...
+copy vercel.routes.json public\_routes.json > nul
+if not exist public\_vercel mkdir public\_vercel
+copy public\_redirects public\_vercel\routes > nul
+
 echo Done! Files are ready for deployment.
 pause
