@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "RemapperCZ documentation site",
   "scripts": {
-    "build": "bash ./build_script.sh"
+    "build": "bash ./build.sh"
   },
   "engines": {
     "node": ">=14.x"
