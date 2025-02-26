@@ -1,16 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "build_script.sh",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "site"
-      }
-    }
-  ],
-  "buildCommand": "pip install -r requirements.txt && mkdocs build",
-  "outputDirectory": "site",
-  "installCommand": "pip install -r requirements.txt",
-  "framework": null
+  "cleanUrls": true,
+  "trailingSlash": false
 }
