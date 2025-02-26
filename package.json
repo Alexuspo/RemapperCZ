@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "RemapperCZ documentation site",
   "scripts": {
-    "build": "pip install -r requirements.txt && mkdocs build"
+    "build": "bash ./build_script.sh"
   },
   "engines": {
     "node": ">=14.x"
