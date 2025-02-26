@@ -1,0 +1,11 @@
+This project uses MkDocs to generate a static site.
+The build process:
+1. Installs Python dependencies from requirements.txt
+2. Runs MkDocs to build the site
+3. Output is placed in the "site" directory
+
+To build locally:
+1. Install Python 3.x
+2. Run: pip install -r requirements.txt
+3. Run: mkdocs build
+4. The site will be in the "site" directory
