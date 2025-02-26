@@ -1,2 +1,7 @@
 venv/
 site/
+.vercel
+node_modules
+__pycache__
+*.pyc
+.env
